@@ -8,13 +8,19 @@ export default createGlobalStyle`
     outline: 0;
     box-sizing: border-box;
   }
+
   body, input, button {
     font: 16px "Noto Sans Sc", sans-serif;
   }
   #root {
     max-width: 960px;
     margin: 0 auto;
-    padding: 40px 20px;
+    --secondary: #01a6baeb;
+    --primary: #f3d18a;
+    --transparency: #000000bf;
+    --black: #000;
+    --white: #fff;
+    --gray: #333333;
   }
   button {
     cursor: pointer;

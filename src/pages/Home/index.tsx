@@ -1,7 +1,14 @@
 import React from 'react';
 
+import  Navigation  from "../../components/Navigation";
+
 import { Title } from './styles'
 const Home: React.FC = () => {
-  return <Title>Hello Home</Title>;
+  return (
+
+  <Navigation>
+    <Title>Hello Home</Title>
+  </Navigation>
+  )
 };
 export default Home;
