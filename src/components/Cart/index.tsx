@@ -21,32 +21,7 @@ interface RootState {
   }
 }
 
-interface ProductProps {
-  product: {
-    id: string,
-    name: string,
-		style: string,
-		code_color: string,
-		color_slug: string,
-		color: string,
-		on_sale: boolean,
-		regular_price: number,
-		actual_price: number,
-		discount_percentage: number,
-    installments: number,
-    image: string,
-    selectedSize: string,
-    quantity: string,
-		sizes: [
-			{
-				available: boolean,
-				size: string,
-				sku: string
-			}
-		]
-  }
 
-}
 const Cart: React.FC = () => {
   const dispatch = useDispatch();
   const [showCart, setShowCart] = useState(false);
