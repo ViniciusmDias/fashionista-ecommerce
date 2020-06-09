@@ -37,7 +37,6 @@ interface ProductProps {
 			}
 		]
   }
-
 }
 
 const ListProducts: React.FC = () => {
