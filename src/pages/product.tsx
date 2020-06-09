@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Title } from './styles'
 const Product: React.FC = () => {
-  return <Title>Hello Product</Title>;
+  return <h1>Hello Product</h1>;
 };
 export default Product;
