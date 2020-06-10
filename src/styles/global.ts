@@ -15,8 +15,8 @@ export default createGlobalStyle`
   #root {
     max-width: 960px;
     margin: 0 auto;
-    --secondary: #01a6baeb;
-    --primary: #f3d18a;
+    --secondary: #f3d18a;
+    --primary: #01a6baeb;
     --transparency: #000000bf;
     --black: #000;
     --white: #fff;
