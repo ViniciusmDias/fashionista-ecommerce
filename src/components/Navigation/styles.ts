@@ -6,12 +6,10 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  height: 14vh;
+  height: 10vh;
   position: relative;
   background-color: var(--white);
-
-
-
+  margin: 0 4vw;
 `
 
 export const MenuLink = styled(Link)`
@@ -20,7 +18,7 @@ export const MenuLink = styled(Link)`
   font-size: 2rem;
   letter-spacing: 3px;
   font-weight: bold;
-  margin: 0 3vw;
+  flex: 1;
 
   @media (min-width: 765px) {
     font-size: 2.5rem;
