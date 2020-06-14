@@ -31,13 +31,29 @@ export const List = styled.section`
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+    @media (min-width: 760px) {
+      justify-content: space-between;
 
+      &::after {
+        content: "";
+        flex: auto;
+      }
+    }
     a {
       margin: 2vh 0;
       display: flex;
       justify-content: center;
       width: 100%;
+      text-decoration: none;
+      color: var(--primary);
+
+      @media (min-width: 760px) {
+        width: 22%;
+      }
     }
+
+
+
 
   }
 

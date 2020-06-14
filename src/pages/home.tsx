@@ -1,13 +1,13 @@
 import React from 'react';
 
 import Navigation from "../components/Navigation";
-import ListProduct from "../containers/ListProducts"
+import AllProducts from "../containers/AllProducts"
 
 const Home: React.FC = () => {
   return (
   <>
     <Navigation/>
-    <ListProduct/>
+    <AllProducts/>
   </>
   )
 };

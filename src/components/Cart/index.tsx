@@ -11,8 +11,9 @@ import Button from './CartButton/index';
 import Toast from '../Toast';
 import CountTotalPrice from '../../utils/countPrice';
 
-import { CartIcon, Card, CartHeader } from './styles'
+import { CartIcon, Card, CartHeader, CartProducts, CartInfo } from './styles'
 
+const Fade = require('react-reveal/Fade');
 
 interface RootState {
   cartReducer: {
@@ -39,8 +40,8 @@ const Cart: React.FC = () => {
   function handleCheck() {
     if (cartCounter > 0) {
       dispatch(actionsCart.cleanCart());
-      dispatch(actionsToast.addToast('YAY! Compra finalizada.', false));
-    } else { dispatch(actionsToast.addToast('OOPS! Sacola Vazia.', true)); }
+      dispatch(actionsToast.addToast('Compra finalizada, Obrigado!', false));
+    } else { dispatch(actionsToast.addToast('A sacola está vazia', true)); }
   }
 
   return (
@@ -55,7 +56,8 @@ const Cart: React.FC = () => {
       </CartIcon>
 
       {showCart && (
-        <Drawer>
+
+        <Drawer >
           <Card >
             <CartHeader >
               <button onClick={openCart}>
@@ -68,16 +70,18 @@ const Cart: React.FC = () => {
               </h3>
             </CartHeader>
 
-            <div className="cart__content">
+            <CartProducts>
+          <Fade right>
               <ul className="cart__products">
                 {cartCounter > 0
                   ? cartItems.map((product: any, index: any) => (
                     <CartItem key={index} product={product} />
-                  ))
-                  : <p>Sacola Vazia</p>}
+                    ))
+                    : <p>Sacola Vazia</p>}
               </ul>
+         </Fade>
 
-              <div className="cart__infos">
+              <CartInfo>
                 <div className="info__content">
                   <strong className="info__text--color">Total</strong>
                   <strong className="info__text--color">
@@ -88,8 +92,8 @@ const Cart: React.FC = () => {
                 </div>
 
                 <Button handleCheck={handleCheck} />
-              </div>
-            </div>
+              </CartInfo>
+            </CartProducts>
           </Card>
         </Drawer>
       )}

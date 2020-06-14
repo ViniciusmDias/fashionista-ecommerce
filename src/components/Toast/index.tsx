@@ -33,7 +33,7 @@ const Toast: React.FC = () => {
   return (
     <>
       {visible &&
-        <Container style={{ background: `${ error ? '#FF4500' : '#268B07'}`}}>
+        <Container style={{ background: `${ error ? 'var(--primary)' : 'green'}`}}>
           {error
             ? <div >
                 <AiOutlineCheckCircle size={18} color='#FFF' />

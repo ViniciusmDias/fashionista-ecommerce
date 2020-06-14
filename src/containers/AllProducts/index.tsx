@@ -39,7 +39,7 @@ interface ProductProps {
   }
 }
 
-const ListProducts: React.FC = () => {
+const AllProducts: React.FC = () => {
   const dispatch = useDispatch();
   const products = useSelector((state: RootState) => state.productsReducer.data);
   const loading = useSelector((state: RootState) => state.productsReducer.loading);
@@ -51,7 +51,7 @@ const ListProducts: React.FC = () => {
   return (
     <List>
       <div>
-        <h2>Moda Feminina</h2>
+        <h2>Itens Disponíveis</h2>
         <label>({products.length} items)</label>
       </div>
 
@@ -71,4 +71,4 @@ const ListProducts: React.FC = () => {
     </List>
   );
 };
-export default ListProducts
+export default AllProducts

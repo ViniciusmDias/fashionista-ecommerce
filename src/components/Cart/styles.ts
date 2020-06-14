@@ -39,6 +39,10 @@ export const Card = styled.div `
   right: 0;
   font-size: 14px;
   background: #000;
+
+  @media screen and (min-width: 600px) {
+    max-width: 400px;
+  }
 `;
 
 export const CartHeader = styled.div`
@@ -54,113 +58,52 @@ export const CartHeader = styled.div`
   button {
     border: 0;
     background: transparent;
+    position: absolute;
+    left: 0;
+    margin: 2vw;
   }
   h3 {
     margin: 0px auto;
   }
 `;
 
-// .cart__content {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   overflow-y: auto;
-//   overflow-x: hidden;
-//   height: calc(100vh - 180px);
-// }
 
-// .cart__products {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   margin: 0 5px;
-// }
+export const CartContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 180px);
+`
 
-// /* || CartItem */
+export const CartProducts = styled.ul`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+`
 
-// .cart-item {
-//   position: relative;
-//   display: flex;
-//   align-items: center;
-//   width: 100%;
-//   margin-bottom: 5px;
-//   padding: 5px;
-//   border-radius: 2px;
-//   background: #131313;
-// }
+export const CartInfo = styled.div`
+  position: absolute;
+  width: 99%;
+  padding: 20px;
+  background: rgb(10, 10, 10);
+  z-index: 25;
+  bottom: 0;
+  border-radius: 2px;
 
-// .cart-item__image {
-//   max-width: 100px;
-// }
+  div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2px;
+    font-weight: 400;
+    color: #c8c8c8;
 
-// .cart-item__infos {
-//   display: flex;
-//   flex-direction: column;
-//   margin-left: 15px;
-//   min-width: 200px;
-// }
-
-// .cart-item__text {
-//   font-size: 12px;
-//   margin-bottom: 2px;
-//   color: #FFF;
-//   text-transform: capitalize;
-// }
-
-// .cart-item__quantity {
-//   display: flex;
-//   text-align: center;
-//   align-items: center;
-//   margin-top: 8px;
-// }
-
-// .cart-item__btn-increment, .cart-item__btn-decrement {
-//   text-align: center;
-//   width: 20px;
-//   height: 20px;
-//   font-size: 14px;
-//   padding: 0;
-//   background-color: transparent;
-//   color: #000;
-//   background: #fff;
-//   border: 1px solid #FFF;
-//   border-radius: 100%;
-//   margin: 0px 10px;
-// }
-
-// .cart-item__btn-remove {
-//   padding: 0;
-//   background: transparent;
-// }
-
-// .cart__infos {
-//   position: absolute;
-//   width: 99%;
-//   padding: 20px;
-//   background: rgb(10, 10, 10);
-//   z-index: 25;
-//   bottom: 0;
-//   border-radius: 2px;
-// }
-
-// .info__content {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   margin-bottom: 2px;
-//   font-weight: 400;
-//   color: #c8c8c8;
-// }
-
-// .info__text--color {
-//   color: #FFF;
-// }
-
-
-// @media screen and (min-width: 600px) {
-//   .cart {
-//     max-width: 400px;
-//   }
-// }
-
+    strong {
+      color: #FFF;
+    }
+  }
+`

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { BsArrowLeft } from 'react-icons/bs';
+import { useDispatch } from 'react-redux';
+import { FiArrowLeft } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 import actionsCart from '../../store/actions/Cart';
@@ -9,7 +9,7 @@ import ProductImage from '../../components/ProductImage';
 import Toast from '../../components/Toast';
 
 
-import './styles.css'
+import { Product, ProductGroup, ProductInfo, InfoPrice, ProductSize } from './styles'
 
 interface ProductProps {
   product: {
@@ -37,11 +37,10 @@ interface ProductProps {
   }
 }
 
-const SingleProduct: React.FC<ProductProps> = ({ product }) => {
+const OneProduct: React.FC<ProductProps> = ({ product }) => {
   const dispatch = useDispatch();
   const [selectedSize, setSelectedSize] = useState('');
   const [error, setError] = useState(false);
-  // const sizeError = useSelector(state => state.cartReducer.error)
 
   function onClickSize(event: any, sku: any) {
     event.preventDefault();
@@ -52,7 +51,6 @@ const SingleProduct: React.FC<ProductProps> = ({ product }) => {
   function onClickAdd(product: any) {
     const item = { ...product, selectedSize: selectedSize, quantity: 1 };
     if(selectedSize === '') {
-      // dispatch(actionsCart.addProductFailure());
       setError(true);
     } else {
       setError(false);
@@ -62,23 +60,23 @@ const SingleProduct: React.FC<ProductProps> = ({ product }) => {
   }
 
   return (
-    <div className='product'>
+    <Product className='product'>
       <ProductImage url={product.image} />
 
-      <div className='product__group'>
-        <div className='product__info'>
-          <h3 className='info__name'>{product.name}</h3>
+      <ProductGroup>
+        <ProductInfo>
+          <h3>{product.name}</h3>
 
-          <div className='info__price'>
+          <InfoPrice>
             {product.on_sale &&
-              <label className='price-regular'>{product.regular_price}</label>
+              <label >{product.regular_price}</label>
             }
-            <strong className='price__actual'>{product.actual_price}</strong>
+            <strong>{product.actual_price}</strong>
             <br/>
-            <label className='price__installments'>Em até {product.installments}</label>
-          </div>
+            <label>Em até {product.installments}</label>
+          </InfoPrice>
 
-          <div className='product__size'>
+          <ProductSize>
             {product.sizes
               .filter(item => item.available === true)
               .map(size => (
@@ -91,22 +89,22 @@ const SingleProduct: React.FC<ProductProps> = ({ product }) => {
                 </button>
               )
             )}
-            {error && <p className='error'>Selecione um tamanho</p>}
-          </div>
-        </div>
+            {error && <p>Selecione um tamanho</p>}
+          </ProductSize>
+        </ProductInfo>
 
-        <button className='btn-submit btn-submit--hover' onClick={() => onClickAdd(product)}>
+        <button className='btn-submit' onClick={() => onClickAdd(product)}>
           Adicionar à Sacola
         </button>
 
-        <Link to='/' className='link-back link-back--hover'>
-          <BsArrowLeft size={24} />
-          Voltar para a home
+        <Link to='/' className='back'>
+          <FiArrowLeft size={24} />
+          Produtos
         </Link>
-      </div>
+      </ProductGroup>
       <Toast />
-    </div>
+    </Product>
   );
 };
 
-export default SingleProduct
+export default OneProduct
