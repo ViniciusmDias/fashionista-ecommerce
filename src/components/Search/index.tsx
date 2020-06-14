@@ -57,12 +57,12 @@ const Search: React.FC = () => {
       {showSearch && (
         <Drawer>
           <SearchDrawer>
-            <div>
+            <aside>
               <h3>Buscar Produtos</h3>
               <button onClick={handleSearch}>
                 <AiOutlineClose size={18} color='#fff' />
               </button>
-            </div>
+            </aside>
 
             <SearchHeader>
               <input

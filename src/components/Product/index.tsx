@@ -26,7 +26,6 @@ interface ProductProps {
 			}
 		]
   }
-
 }
 
 const Product: React.FC<ProductProps> = ({ product }) => {

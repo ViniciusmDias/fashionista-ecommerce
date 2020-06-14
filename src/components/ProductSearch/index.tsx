@@ -31,8 +31,8 @@ interface ProductProps {
 
 const ProductSearch: React.FC<ProductProps> = ({ product }) => {
   return (
-    <Link to={`/product/${product.id}`}>
-      <Container>
+    <Container>
+      <Link to={`/product/${product.id}`}>
         {product.image
           ? <img src={product.image} alt={product.name} />
           : <img src='https://via.placeholder.com/470x594/FFFFFF/?text=Imagem+Indisponível' alt={product.name} />
@@ -42,8 +42,8 @@ const ProductSearch: React.FC<ProductProps> = ({ product }) => {
           <label>{product.actual_price}</label>
           <label>{product.installments}</label>
         </div>
-      </Container>
     </Link>
+  </Container>
   );
 };
 
