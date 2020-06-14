@@ -8,7 +8,6 @@ import actionsToast from '../../store/actions/Toast';
 import ProductImage from '../../components/ProductImage';
 import Toast from '../../components/Toast';
 
-
 import { Product, ProductGroup, ProductInfo, InfoPrice, ProductSize } from './styles'
 
 interface ProductProps {
@@ -48,14 +47,15 @@ const OneProduct: React.FC<ProductProps> = ({ product }) => {
     setSelectedSize(sku);
   }
 
-  function onClickAdd(product: any) {
+  function onClickAdd(product: Object) {
     const item = { ...product, selectedSize: selectedSize, quantity: 1 };
     if(selectedSize === '') {
       setError(true);
     } else {
       setError(false);
       dispatch(actionsCart.addProduct(item));
-      dispatch(actionsToast.addToast('Adicionado à sacola', false));
+      dispatch(actionsToast.addToast('Adicionado ao carrinho', false));
+
     }
   }
 
@@ -94,7 +94,7 @@ const OneProduct: React.FC<ProductProps> = ({ product }) => {
         </ProductInfo>
 
         <button className='btn-submit' onClick={() => onClickAdd(product)}>
-          Adicionar à Sacola
+          Adicionar ao carrinho
         </button>
 
         <Link to='/' className='back'>

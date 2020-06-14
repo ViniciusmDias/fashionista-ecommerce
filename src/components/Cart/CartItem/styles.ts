@@ -13,7 +13,7 @@ export const Container = styled.li`
   button {
     padding: 0;
     background: transparent;
-
+    border: 0;
   }
 
   img {
@@ -52,6 +52,9 @@ export const Section = styled.section`
       border: 1px solid #FFF;
       border-radius: 100%;
       margin: 0px 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 `

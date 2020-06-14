@@ -8,7 +8,6 @@ import actionsCart from '../../store/actions/Cart';
 import Drawer from '../../containers/Drawer';
 import CartItem from './CartItem/index';
 import Button from './CartButton/index';
-import Toast from '../Toast';
 import CountTotalPrice from '../../utils/countPrice';
 
 import { CartIcon, Card, CartHeader, CartProducts, CartInfo } from './styles'
@@ -41,7 +40,9 @@ const Cart: React.FC = () => {
     if (cartCounter > 0) {
       dispatch(actionsCart.cleanCart());
       dispatch(actionsToast.addToast('Compra finalizada, Obrigado!', false));
-    } else { dispatch(actionsToast.addToast('A sacola está vazia', true)); }
+    } else {
+      dispatch(actionsToast.addToast('A sacola está vazia', true));
+    }
   }
 
   return (
@@ -97,7 +98,6 @@ const Cart: React.FC = () => {
           </Card>
         </Drawer>
       )}
-      <Toast />
     </>
   );
 }

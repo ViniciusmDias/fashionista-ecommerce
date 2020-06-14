@@ -24,7 +24,7 @@ export const CartIcon = styled.div`
     line-height: 1rem;
     font-weight: 700;
     white-space: nowrap;
-    z-index: 10;
+    z-index: 9;
     position: absolute;
     left: -10px;
   }

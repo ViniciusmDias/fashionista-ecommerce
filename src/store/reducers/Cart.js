@@ -25,7 +25,7 @@ const reducers = (state = INITIAL_STATE, action) => {
       return { ...state, error: true };
     case actionsTypes.INCREMENT_QUANTITY_PRODUCT:
       const incrementItems = state.items.map(item => {
-          if(item.selectedSize === action.payload) 
+          if(item.selectedSize === action.payload)
             item.quantity+=1
           return item
         });
@@ -35,7 +35,7 @@ const reducers = (state = INITIAL_STATE, action) => {
       return { ...state, counter: incrementCount, items: incrementItems, error: false };
     case actionsTypes.DECREMENT_QUANTITY_PRODUCT:
       const decrementItems = state.items.map(item => {
-          if(item.selectedSize === action.payload && item.quantity > 1) 
+          if(item.selectedSize === action.payload && item.quantity > 1)
             item.quantity-=1
           return item
         });
@@ -86,8 +86,8 @@ const countQuantity = (items) => {
   if(items.length > 0 ) {
     const quantity = items.map((item) => item.quantity)
     counter = quantity.reduce((acum, item) => acum + item);
-  } 
-  
+  }
+
   return counter
 }
 

@@ -8,13 +8,13 @@ const INITIAL_STATE = {
 
 const reducers = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case actionsTypes.ADD_TOAST: 
+    case actionsTypes.ADD_TOAST:
       return { ...state, message: action.payload.message, visible: true, error: action.payload.error };
-    case actionsTypes.REMOVE_TOAST: 
+    case actionsTypes.REMOVE_TOAST:
       return { ...state, message: '', visible: false, error: false };
     default:
       return state;
   }
-} 
+}
 
 export default reducers;

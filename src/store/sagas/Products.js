@@ -23,5 +23,5 @@ function* watchRequest() {
 function* productsSagas() {
   yield all([ watchRequest() ])
 }
- 
+
 export default productsSagas;

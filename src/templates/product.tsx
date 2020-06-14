@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { RouteProps,RouteComponentProps } from 'react-router';
+import { RouteComponentProps } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 
 import actionsProducts from '../store/actions/Products';
@@ -22,7 +22,6 @@ const Product: React.FC<RouteComponentProps<TParams>> = ({ match })  => {
 
   useEffect(() => {
     dispatch(actionsProducts.getProducts());
-    console.log(id)
 
   }, [dispatch]);
 

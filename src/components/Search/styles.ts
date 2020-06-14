@@ -18,6 +18,27 @@ export const SearchDrawer = styled.section`
   top: 0;
   left: 0;
   font-size: 14px;
+
+  aside {
+    margin: 0 6vw;
+    display: flex;
+    justify-content: space-between;
+
+    h3 {
+      color: var(--primary);
+      margin: 2vh 0;
+      flex: 1;
+    }
+    button {
+      width: 48px;
+      z-index: 11;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 0;
+      background-color: transparent;
+    }
+  }
 `
 
 export const SearchHeader = styled.div`
@@ -59,10 +80,15 @@ export const SearchBody = styled.div`
   height: 80vh;
 
   ul {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 10px 0;
+
+    li {
+      width: 100%;
+    }
   }
 `
