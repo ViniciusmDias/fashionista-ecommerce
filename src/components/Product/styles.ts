@@ -28,7 +28,7 @@ export const Image = styled.div`
   div {
     padding: 2px 6px;
     color: #000;
-    background: rgb(255, 94, 20);
+    background: var(--primary);
     position: absolute;
     left: 0;
     top: 0;
@@ -68,7 +68,7 @@ export const Description = styled.div`
   label {
     font-size: 14px;
     text-decoration: line-through;
-    color: rgb(255, 94, 20);
+    color: var(--primary);
   }
   strong {
     font-size: 15px;
