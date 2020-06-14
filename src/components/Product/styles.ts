@@ -22,7 +22,7 @@ export const Image = styled.div`
   img {
     width: 100%;
     height: auto;
-    transition: all .8s;
+    transition: all .6s ease-in-out;
   }
 
   div {
@@ -35,7 +35,8 @@ export const Image = styled.div`
   }
 
   button {
-    display: none;
+    opacity: 0;
+    transition: 0.6s all ease-in-out;
     position: absolute;
     padding: 15px 40px;
     background: transparent;
@@ -48,7 +49,7 @@ export const Image = styled.div`
       opacity: 0.7;
     }
     button {
-      display: block;
+      opacity: 1;
     }
   }
 `
